@@ -1,0 +1,165 @@
+Outside notes:
+http://capstone.cs.ucsb.edu/team_docs_13/SRS/SRS_NullTerminators.pdf
+http://try.github.io/levels/1/challenges/2
+
+3. Specific requirements
+	
+	
+3.1 External interface requirements
+		
+			
+3.1.1 User interfaces
+				
+				
+3.1.1.1 A user interface for course selection which includes:
+					
+						
+3.1.1.1.1 Overall page frame similar to current LORIS system http://telaris.wlu.ca
+						
+3.1.1.1.2 A term selection dropdown
+						
+3.1.1.1.3 A guided course search system with three tabs
+							
+								
+3.1.1.1.3.1 "Manual" which provides a narrowing course selection process finalizing with a description as the user clicks on each class
+								
+3.1.1.1.3.2 "Course" which provides a search functionality with descriptions
+								
+3.1.1.1.3.3 "CRN" which provides a system similar to the current system that can be found here.
+							 						
+3.1.1.1.4 Two persistent buttons are located below the search systems
+								
+									
+3.1.1.1.4.1 "Add to Worksheet" which adds to the users worksheet
+									
+3.1.1.1.4.2 "Register Course" which adds to the users registered courses
+								 						
+3.1.1.1.5 A schedule view with the heading "Schedule View"
+								
+									
+3.1.1.1.5.1 A weekly calendar view
+										
+											
+3.1.1.1.5.1.1 Displays registered classes in the weekly calendar view
+											
+3.1.1.1.5.1.2 Displays classes added to the "schedule viewer" in the weekly calendar view
+										 									
+3.1.1.1.5.2 "Worksheet" which has a list of courses that the student is interested in
+									
+3.1.1.1.5.3 "Schedule Viewer" which as both a list of courses that the student is registered in and courses that the student would like to preview
+										
+											
+3.1.1.1.5.3.1 Note: Classes that overlap in terms of timetable will show up a different colour on the calendar view.
+										 								 					 				 			
+3.1.2 Hardware interfaces
+				
+					
+The system will be located on the Wilfrid Laurier University Computer Science server Hopper. Clients will access the content from their home or university computers through the internet.
+				 			 			
+3.1.3 Software interfaces
+				
+					
+3.1.3.1 At this time software requirements beyond being capable of compiling on hopper have not been fully discussed. The following is a list of topics covered thus far.
+					
+						
+3.1.3.1.1 Git repository at https://github.com/CP317-2013/LorisPlus
+						
+3.1.3.1.2 UML created by Magic Draw
+						
+3.1.3.1.3 PHP and JAVA have been discussed as possible languages for production
+						
+3.1.3.1.4 Google docs and Facebook are being used for group organization as well as communication
+					 				 			
+3.1.4 Communications interfaces
+				
+					
+N/A
+				 		 	 	 	
+		
+3.2 System features
+		
+			
+3.2.1 System Feature 1
+			
+				
+3.2.1.1 Introduction/Purpose
+				
+3.2.1.2 Stimulus/Response Sequence
+				
+3.2.1.3 Associated functional requirements
+3.2.1.3.1 Functional Requirement 1 (1-n need separate headings)
+	 				 			 		 	 	 	
+3.3 Performance requirements				
+3.3.1 The system shall accept input from a maximum of 2 program majors at one time during the fall registration process
+3.3.2 System response time shall be no longer than 1 second under optimal conditions and 5 seconds under heavy load (e.g. Fall course registration)
+3.3.3 The system shall lock a class in the database when added to the schedule viewer until the user logs out or until the session expires.	
+3.4 Design constraints		
+3.4.1 The system shall run on a modern desktop browser (e.g. Chrome 24, FireFox 24, Internet Explorer 10, etc.)
+		 	 	 			
+3.5 Software system attributes	
+3.5.1 Reliability
+The system shall maintain stability
+The system shall protect all course registration data from unwanted or accidental modification
+3.5.2 Availability
+Course registration shall be available during fall term in accordance with the current major registration and restriction schedule. (e.g. Computer Science 3rd year register after 4th year Computer Science students.)
+3.5.3 Security
+The user login credentials shall be salted and hashed per industry standard
+An user must not be able to view, change, modify other users information
+An user shall not be able to impersonate an administrator and vice versa
+		 	 	 	
+		
+3.6 Other requirements
+		
+				
+3.6.1 Must improve on the current LORIS course registration process
+3.6.2 Must have easily understood user interface
+		
+
+Features to divide and write:
+
+
+
+
+not
+Page is displayed
+Login page is displayed
+Can register for class
+
+
+From the use cases
+
+USER:
+View schedule
+	Display student schedule
+Display prospective schedule from the schedule viewer box
+Class lookup 1
+	Select term
+	Add to worksheet
+Add to schedule viewer
+Register class
+Class lookup 2
+	Select term
+	Add to worksheet
+Add to schedule viewer
+Register class
+Class lookup 3 (CRN)
+	Select term
+	Add to worksheet
+Add to schedule viewer
+Register class
+Remove Course
+	Remove from worksheet
+Remove from Schedule viewer
+	De-register class
+Student Login
+	Login as user
+
+Administrator:
+Delete existing course
+	Remove course iff no one is registered
+Admin login
+	Login as admin
+Modify Existing Course
+	Modify course iff no one is registered 
+Add New Course
+	Add a new course to the database
