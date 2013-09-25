@@ -59,7 +59,7 @@ The system will be located on the Wilfrid Laurier University Computer Science se
 3.1.3 Software interfaces
 				
 					
-3.1.3.1 At this time software requirements beyond being capable of compiling on hopper have not been fully discussed. The following is a list of topics covered thus far.
+3.1.3.1 At this time software requirements beyond being capable of compiling and running on hopper have not been fully discussed. The following is a list of topics covered thus far.
 					
 						
 3.1.3.1.1 Git repository at https://github.com/CP317-2013/LorisPlus
@@ -88,7 +88,124 @@ N/A
 				
 3.2.1.3 Associated functional requirements
 3.2.1.3.1 Functional Requirement 1 (1-n need separate headings)
+3.2.1 Schedule View
+			
+				
+3.2.1.1 Introduction/Purpose
+The system shall provide users with a visual display of their weekly schedule, or a potential schedule from courses placed by the user into the schedule viewer
+				
+3.2.1.2 Stimulus/Response Sequence
+The user will select to view either their current schedule or a potential one
+If their current schedule is selected, a weekly schedule of all the user’s currently registered courses will be displayed
+If the potential schedule is selected, a weekly schedule of all the user’s registered courses, and all courses the user has added to the schedule viewer box will be displayed
+				
+3.2.1.3 Associated functional requirements
+The system shall retrieve the user’s registered courses for the selected term from the appropriate database
+The system shall store courses selected by the user to move to schedule viewer
+The system shall process the details of these courses to generate a visual representation of the user’s schedule
+The system will not modify the data of these courses when generating the display
+
+3.2.2 Class Lookup by Filtering
+			
+				
+3.2.2.1 Introduction/Purpose
+In order to allow users to browse possible courses to register in, the system shall provide a list of courses filtered according to the user’s selection, and provide information on each course shown
+				
+3.2.2.2 Stimulus/Response Sequence
+the user shall select which filters to apply to the courses they wish to view, the system shall then apply these filters to search through a database of courses and display a list of those which meet the criteria specified. 
+The user will then be able to select a course from the list to see detailed information, such as a description, prerequisite courses etc. along with buttons allowing them to add the course to their worksheet or register immediately
+				
+3.2.2.3 Associated functional requirements
+The system shall access a database of courses and generate a list of all which meet the user specified criteria
+The system shall 
+
 	 				 			 		 	 	 	
+3.2.9 Delete existing course
+	3.2.9.1 Priority: Medium
+	3.2.9.2 Description: Removes a course from the database.
+	3.2.9.3 Response to abnormal situations: 
+		3.2.9.3.1 Overflow: 
+Not applicable as courses are removed with the same search feature as the user has to add a course
+3.2.9.3.2 Error handling:
+			Displays error message to administrator with no change to the database
+3.2.9.4 Limitations: 
+If and only if no student is registered for classes. Otherwise deregister students
+If and only if the course exists in the database
+3.2.A Admin login
+	3.2.A.1 Priority: High
+	3.2.A.2 Description: Allows the Administrator to login from the same page as a user
+	3.2.A.3 Response to abnormal situations: 
+		3.2.A.3.1 Overflow: 
+Not applicable
+		3.2.A.2 Error handling:
+			Displays error message to administrator with no change to the database
+	3.2.A.4 Limitations: 
+Administrators may only login if they exist.
+3.2.B Modify Existing Course
+	3.2.B.1 Priority: Medium
+	3.2.B.2 Description: Modifies a course in the database.
+	3.2.B.3 Response to abnormal situations: 
+		3.2.B.3.1 Overflow: 
+The course is locked in the database and cannot be registered while the course is being modified. 
+		3.2.B.3.2 Error handling:
+If the course is modified while a student is in the process of registering the student receives an error and the students courses do not change. (no additions)
+	3.2.B.4 Limitations: 
+Only available on courses currently in the database and not during the registration process
+3.2.C Add New Course
+	3.2.C.1 Priority: High
+	3.2.C.2 Description: Adds a course in the database.
+	3.2.C.3 Response to abnormal situations: 
+		3.2.C.3.1 Overflow: 
+You cannot add two of the same class with the same CRN or course code
+		3.2.C.3.2 Error handling:
+If the same course or the same CRN is added the administrator is informed with an error message and no changes occur with the database.
+	3.2.C.4 Limitations: 
+Can only add new classes that are not currently represented in the database
+
+3.2.D Create user (student)
+	3.2.D.1 Priority: High
+	3.2.D.2 Description: Allows administrators to create users
+3.2.D.3 Response to abnormal situations: 
+		3.2.D.3.1 Overflow: 
+If two users exist cause error with no changes to the database
+		3.2.D.3.2 Error handling:
+			No two users may have the same ID. If an administrator attempts to add a user with the same ID an error is displayed with no change to the database
+	3.2.D.4 Limitations: 
+Administrators may only add new users
+
+3.2.E Create Administrator 
+	3.2.E.1 Priority: Medium
+	3.2.E.2 Description: Allows administrators to create other administrators
+	3.2.E.3 Response to abnormal situations: 
+		3.2.E.3.1 Overflow: 
+If two administrators exist cause error with no changes to the database
+		3.2.E.3.2 Error handling:
+			No two administrators may have the same ID. If an administrator attempts to add a user with the same ID an error is displayed with no change to the database
+	3.2.E.4 Limitations: 
+Administrators may only add new administrators and cannot promote users
+
+3.2.F Remove user (student)
+	3.2.F.1 Priority: Medium
+	3.2.F.2 Description: Allows administrators to remove users
+	3.2.F.3 Response to abnormal situations: 
+		3.2.F.3.1 Overflow: 
+Administrators shall not remove a user that does not exist
+		3.2.F.3.2 Error handling:
+			If an administrator attempts to remove a user that does not exist an error is displayed and no change is made to the database
+	3.2.F.4 Limitations: 
+Users may not remove other users
+
+3.2.G Remove Administrator
+	3.2.G.1 Priority: Low
+	3.2.G.2 Description: Allows administrators to remove administrators
+	3.2.G.3 Response to abnormal situations: 
+		3.2.G.3.1 Overflow: 
+Administrators may not remove themselves
+The only administrator may not remove themselves
+		3.2.G.3.2 Error handling:
+			No two users may have the same ID. If an administrator attempts to add a user with the same ID an error is displayed with no change to the database
+	3.2.G.4 Limitations: 
+Administrators may only remove other administrators if there is more than one administrator.
 3.3 Performance requirements				
 3.3.1 The system shall accept input from a maximum of 2 program majors at one time during the fall registration process
 3.3.2 System response time shall be no longer than 1 second under optimal conditions and 5 seconds under heavy load (e.g. Fall course registration)
@@ -155,11 +272,89 @@ Student Login
 	Login as user
 
 Administrator:
-Delete existing course
-	Remove course iff no one is registered
-Admin login
-	Login as admin
-Modify Existing Course
-	Modify course iff no one is registered 
-Add New Course
-	Add a new course to the database
+3.2.9 Delete existing course
+	3.2.9.1 Priority: Medium
+	3.2.9.2 Description: Removes a course from the database.
+	3.2.9.3 Response to abnormal situations: 
+		3.2.9.3.1 Overflow: 
+Not applicable as courses are removed with the same search feature as the user has to add a course
+3.2.9.3.2 Error handling:
+			Displays error message to administrator with no change to the database
+3.2.9.4 Limitations: 
+If and only if no student is registered for classes. Otherwise deregister students
+If and only if the course exists in the database
+3.2.A Admin login
+	3.2.A.1 Priority: High
+	3.2.A.2 Description: Allows the Administrator to login from the same page as a user
+	3.2.A.3 Response to abnormal situations: 
+		3.2.A.3.1 Overflow: 
+Not applicable
+		3.2.A.2 Error handling:
+			Displays error message to administrator with no change to the database
+	3.2.A.4 Limitations: 
+Administrators may only login if they exist.
+3.2.B Modify Existing Course
+	3.2.B.1 Priority: Medium
+	3.2.B.2 Description: Modifies a course in the database.
+	3.2.B.3 Response to abnormal situations: 
+		3.2.B.3.1 Overflow: 
+The course is locked in the database and cannot be registered while the course is being modified. 
+		3.2.B.3.2 Error handling:
+If the course is modified while a student is in the process of registering the student receives an error and the students courses do not change. (no additions)
+	3.2.B.4 Limitations: 
+Only available on courses currently in the database and not during the registration process
+3.2.C Add New Course
+	3.2.C.1 Priority: High
+	3.2.C.2 Description: Adds a course in the database.
+	3.2.C.3 Response to abnormal situations: 
+		3.2.C.3.1 Overflow: 
+You cannot add two of the same class with the same CRN or course code
+		3.2.C.3.2 Error handling:
+If the same course or the same CRN is added the administrator is informed with an error message and no changes occur with the database.
+	3.2.C.4 Limitations: 
+Can only add new classes that are not currently represented in the database
+
+3.2.D Create user (student)
+	3.2.D.1 Priority: High
+	3.2.D.2 Description: Allows administrators to create users
+3.2.D.3 Response to abnormal situations: 
+		3.2.D.3.1 Overflow: 
+If two users exist cause error with no changes to the database
+		3.2.D.3.2 Error handling:
+			No two users may have the same ID. If an administrator attempts to add a user with the same ID an error is displayed with no change to the database
+	3.2.D.4 Limitations: 
+Administrators may only add new users
+
+3.2.E Create Administrator 
+	3.2.E.1 Priority: Medium
+	3.2.E.2 Description: Allows administrators to create other administrators
+	3.2.E.3 Response to abnormal situations: 
+		3.2.E.3.1 Overflow: 
+If two administrators exist cause error with no changes to the database
+		3.2.E.3.2 Error handling:
+			No two administrators may have the same ID. If an administrator attempts to add a user with the same ID an error is displayed with no change to the database
+	3.2.E.4 Limitations: 
+Administrators may only add new administrators and cannot promote users
+
+3.2.F Remove user (student)
+	3.2.F.1 Priority: Medium
+	3.2.F.2 Description: Allows administrators to remove users
+	3.2.F.3 Response to abnormal situations: 
+		3.2.F.3.1 Overflow: 
+Administrators shall not remove a user that does not exist
+		3.2.F.3.2 Error handling:
+			If an administrator attempts to remove a user that does not exist an error is displayed and no change is made to the database
+	3.2.F.4 Limitations: 
+Users may not remove other users
+
+3.2.G Remove Administrator
+	3.2.G.1 Priority: Low
+	3.2.G.2 Description: Allows administrators to remove administrators
+	3.2.G.3 Response to abnormal situations: 
+		3.2.G.3.1 Overflow: 
+Administrators may not remove themselves
+The only administrator may not remove themselves
+		3.2.G.3.2 Error handling:
+			No two users may have the same ID. If an administrator attempts to add a user with the same ID an error is displayed with no change to the database
+	3.2.G.4 Limitations: 
+Administrators may only remove other administrators if there is more than one administrator.
