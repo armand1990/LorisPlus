@@ -1,0 +1,457 @@
+<h3>3. Specific requirements</h3>
+	<ul>
+	<li><h4><a name="ExternalInterfaces">3.1 External interface requirements</a></h4></li>
+		<ul>
+			<li><h4><a name="UserInterfaces">3.1.1 User interfaces</a></h4></li>
+				<ul>
+				<li><p><a name="311p1">3.1.1.1 A user interface for course selection which includes:</a></p></li>
+					<ul>
+						<li><p><a name="31111">3.1.1.1.1 Overall page frame similar to current LORIS system http://telaris.wlu.ca</a></p></li>
+						<li><p><a name="31112">3.1.1.1.2 A term selection dropdown</a></p></li>
+						<li><p><a name="31113">3.1.1.1.3 A guided course search system with three tabs</a></p></li>
+							<ul>
+								<li><p><a name="311131">3.1.1.1.3.1 "Manual" which provides a narrowing course selection process finalizing with a description as the user clicks on each class</a></p></li>
+								<li><p><a name="311132">3.1.1.1.3.2 "Course" which provides a search functionality with descriptions</a></p></li>
+								<li><p><a name="311133">3.1.1.1.3.3 "CRN" which provides a system similar to the current system that can be found <a href="https://loris.wlu.ca/ssb_prod/bwskfreg.P_AltPin">here</a>.</a></p></li>
+							</ul>
+						<li><p><a name="31114">3.1.1.1.4 Two persistent buttons are located below the search systems</a></p></li>
+								<ul>
+									<li><p><a name="311141">3.1.1.1.4.1 "Add to Worksheet" which adds to the users worksheet</a></p></li>
+									<li><p><a name="311142">3.1.1.1.4.2 "Register Course" which adds to the users registered courses</a></p></li>
+								</ul>
+						<li><p><a name="31115">3.1.1.1.5 A schedule view with the heading "Schedule View"</a></p></li>
+								<ul>
+									<li><p><a name="311151">3.1.1.1.5.1 A weekly calendar view</a></p></li>
+										<ul>
+											<li><p><a name="3111511">3.1.1.1.5.1.1 Displays registered classes in the weekly calendar view</a></p></li>
+											<li><p><a name="3111512">3.1.1.1.5.1.2 Displays classes added to the "schedule viewer" in the weekly calendar view</a></p></li>
+										</ul>
+									<li><p><a name="311152">3.1.1.1.5.2 "Worksheet" which has a list of courses that the student is interested in</a></p></li>
+									<li><p><a name="311153">3.1.1.1.5.3 "Schedule Viewer" which as both a list of courses that the student is registered in and courses that the student would like to preview</a></p></li>
+										<ul>
+											<li><p><a name="3111531">3.1.1.1.5.3.1 <b>Note:</b> Classes that overlap in terms of timetable will show up a different colour on the calendar view.</a></p></li>
+										</ul>
+								</ul>
+					</ul>
+				</ul>
+			<li><h4><a name="HardwareInterfaces">3.1.2 Hardware interfaces</a></h4></li>
+				<ul>
+					<li><p><a name="3121"></a>The system will be located on the Wilfrid Laurier University Computer Science server Hopper. Clients will access the content from their home or university computers through the internet.</p></li>
+				</ul>
+			
+			<li><h4><a name="SoftwareInterfaces">3.1.3 Software interfaces</a></h4></li>
+				<ul>
+					<li><p><a name="3131"></a>3.1.3.1 At this time software requirements beyond being capable of compiling and running on hopper have not been fully discussed. The following is a list of topics covered thus far.</p></li>
+					<ul>
+						<li><p><a name="31311"></a>3.1.3.1.1 Git repository at <a href="https://github.com/CP317-2013/LorisPlus">https://github.com/CP317-2013/LorisPlus</a></p></li>
+						<li><p><a name="31312"></a>3.1.3.1.2 UML created by Magic Draw</p></li>
+						<li><p><a name="31313"></a>3.1.3.1.3 PHP and JAVA have been discussed as possible languages for production</p></li>
+						<li><p><a name="31314"></a>3.1.3.1.4 Google docs and Facebook are being used for group organization as well as communication</p></li>
+					</ul>
+				</ul>
+			<li><h4><a name="Assumptions">3.1.4 Communications interfaces</a></h4></li>
+				<ul>
+					<li><p><a name="314"></a>N/A</p></li>
+				</ul>
+		</ul>
+	</ul>
+	<!--/3.1-->
+	
+	<!--3.2-->
+	<ul>
+		<li><h4><a name="FunctionalRequirements">3.2 System features</a></h4></li>
+		<ul>
+			<li><h4><a name="321">3.2.1 Display a page</a></h4></li>
+			<ul>
+				<li><p><a name="3210">3.2.1.0 Priority</a></p></li>
+					<ul>
+						<li><p>HIGH</p></li>
+					</ul>
+				<li><p><a name="3211">3.2.1.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>The system shall always display a page to the user.</p></li>
+					</ul>
+				<li><p><a name="3212">3.2.1.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>User requests from the web server the LorisPlus page and a page is always returned</p></li>
+					</ul>
+				<li><p><a name="3213">3.2.1.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>The system shall have pages for all relevant error codes as well as function web pages</p></li>
+					</ul>
+			</ul>
+					
+			<li><h4><a name="322">3.2.2 Schedule View</a></h4></li>
+			<ul>
+				<li><p><a name="3220">3.2.2.0 Priority</a></p></li>
+					<ul>
+						<li><p>HIGH</p></li>
+					</ul>
+				<li><p><a name="3221">3.2.2.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>The system shall provide users with a visual display of their weekly schedule, or a potential schedule from courses placed by the user into the schedule viewer</p></li>
+					</ul>
+				<li><p><a name="3222">3.2.2.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The user will select to view either their current schedule or a potential one</p></li>
+						<ul>
+							<li><p>If their current schedule is selected, a weekly schedule of all the user’s currently registered courses will be displayed</p></li>
+							<li><p>If the potential schedule is selected, a weekly schedule of all the user’s registered courses, and all courses the user has added to the schedule viewer box will be displayed</p></li>
+						</ul>
+					</ul>
+				<li><p><a name="3223">3.2.2.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>The system shall retrieve the user’s registered courses for the selected term from the appropriate database</p></li>
+						<li><p>The system shall store courses selected by the user to move to schedule viewer</p></li>
+						<li><p>The system shall process the details of these courses to generate a visual representation of the user’s schedule</p></li>
+						<li><p>The system will not modify the data of these courses when generating the display</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="323">3.2.3 Class Lookup by Filter</a></h4></li>
+			<ul>
+				<li><p><a name="3230">3.2.3.0 Priority</a></p></li>
+					<ul>
+						<li><p>HIGH</p></li>
+					</ul>
+				<li><p><a name="3231">3.2.3.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>In order to allow users to browse possible courses to register in, the system shall provide a list of courses filtered according to the user’s selection, and provide information on each course shown</p></li>
+					</ul>
+				<li><p><a name="3232">3.2.3.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The user shall select which filters to apply to the courses they wish to view, the system shall then apply these filters to search through a database of courses and display a list of those which meet the criteria specified.</p></li>
+						<li><p>The user will then be able to select a course from the list to see detailed information, such as a description, prerequisite courses etc. along with buttons allowing them to add the course to their worksheet or register immediately</p></li>
+					</ul>
+				<li><p><a name="3233">3.2.3.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>The system shall access a database of courses and generate a list of all which meet the user specified criteria</p></li>
+						<li><p>The system shall store relevant information about these courses from the database</p></li>
+						<li><p>The system shall provide error checks before allowing the user to register in a course (e.g. check to see if there is a schedule conflict with another course)</p></li>
+						<li><p>The system shall update the database should the user register in a valid course</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="324">3.2.4 Class lookup by Course Name</a></h4></li>
+			<ul>
+				<li><p><a name="3240">3.2.4.0 Priority</a></p></li>
+					<ul>
+						<li><p>HIGH</p></li>
+					</ul>
+				<li><p><a name="3241">3.2.4.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>As users may know the course they wish to register in ahead of time, the system shall allow users to view courses by the user entering the course name into the system.</p></li>
+					</ul>
+				<li><p><a name="3242">3.2.4.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The user shall select the search by name tab, then enter in the course name. the system shall then retrieve this course from the database or display an error message if no such course exists</p></li>
+					</ul>
+				<li><p><a name="3243">3.2.4.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>The system shall access a database of courses and retrieve the one whose name matches the user’s query</p></li>
+						<li><p>The system shall store relevant information about these courses from the database</p></li>
+						<li><p>The system shall display this information</p></li>
+						<li><p>The system shall provide error checks before allowing the user to register in a course (e.g. check to see if there is a schedule conflict with another course)</p></li>
+						<li><p>The system shall update the database should the user register in a valid course</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="325">3.2.5 Class lookup by CRN</a></h4></li>
+			<ul>
+				<li><p><a name="3250">3.2.5.0 Priority</a></p></li>
+					<ul>
+						<li><p>LOW</p></li>
+					</ul>
+				<li><p><a name="3251">3.2.5.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>As users may know the course they wish to register in ahead of time, the system shall allow users to view courses by the user entering the CRN into the system.</p></li>
+					</ul>
+				<li><p><a name="3252">3.2.5.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The user shall select the search by CRN tab, then enter in the CRN. the system shall then retrieve this course from the database or display an error message if no such course exists</p></li>
+					</ul>
+				<li><p><a name="3253">3.2.5.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>The system shall access a database of courses and retrieve the one whose CRN matches the user’s query</p></li>
+						<li><p>The system shall store relevant information about these courses from the database</p></li>
+						<li><p>The system shall display this information</p></li>
+						<li><p>The system shall provide error checks before allowing the user to register in a course (e.g. check to see if there is a schedule conflict with another course)</p></li>
+						<li><p>The system shall update the database should the user register in a valid course</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="326">3.2.6 Remove Course</a></h4></li>
+			<ul>
+				<li><p><a name="3260">3.2.6.0 Priority</a></p></li>
+					<ul>
+						<li><p>HIGH</p></li>
+					</ul>
+				<li><p><a name="3261">3.2.6.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>As users may change their minds about courses they registered for, or eliminate from consideration courses on their worksheet, the system shall provide an option to deselect and deregister from courses.</p></li>
+					</ul>
+				<li><p><a name="3262">3.2.6.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The user shall select the button for removing/deregistering the course linked to the button. If deregistering, the system shall prompt the user for confirmation before proceeding</p></li>
+						<li><p>If deregistering, the system shall update the database with this information</p></li>
+						<li><p>If deselecting a course from the schedule viewer or worksheet, the system shall remove them from its’ own memory</p></li>
+						<li><p>The system will then update any relevant displays</p></li>
+					</ul>
+				<li><p><a name="3263">3.2.6.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>The system shall provide error checks when deregistering in order to prevent invalid schedules (e.g. deregistering from a lecture but not the associated lab)</p></li>
+						<li><p>The system shall only access the course database when deregistering, not deselecting</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="327">3.2.7 Student Login</a></h4></li>
+			<ul>
+				<li><p><a name="3270">3.2.7.0 Priority</a></p></li>
+					<ul>
+						<li><p>HIGH</p></li>
+					</ul>
+				<li><p><a name="3271">3.2.7.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>For the purpose of system organization and user security, each user must have an account which they will log into the system with</p></li>
+					</ul>
+				<li><p><a name="3272">3.2.7.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The user will enter their username into a text field, and their password into another. The system will compare this set of username and password to the one stored, and if they match, allow the user access to the rest of the system.</p></li>
+					</ul>
+				<li><p><a name="3273">3.2.7.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>The system shall keep secure records of username password combinations</p></li>
+						<li><p>The system shall be able to match usernames to their respective password</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="328">3.2.8 Administrator Delete existing course</a></h4></li>
+			<ul>
+				<li><p><a name="3280">3.2.8.0 Priority</a></p></li>
+					<ul>
+						<li><p>MEDIUM</p></li>
+					</ul>
+				<li><p><a name="3281">3.2.8.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>Removes a course from the database</p></li>
+					</ul>
+				<li><p><a name="3282">3.2.8.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>Courses are removed with the same search feature as the user has to add a course</p></li>
+						<li><p>If an error occurs the system shall display an error message to administrator with no change to the database</p></li>
+					</ul>
+				<li><p><a name="3283">3.2.8.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>The system shall remove a course if and only if no student is registered for classes</p></li>
+						<li><p>The system shall remove a course if and only if the course exists in the database</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="329">3.2.9 Administrator Login</a></h4></li>
+			<ul>
+				<li><p><a name="3290">3.2.9.0 Priority</a></p></li>
+					<ul>
+						<li><p>HIGH</p></li>
+					</ul>
+				<li><p><a name="3291">3.2.9.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>Allows the Administrator to login from the same page as a user</p></li>
+					</ul>
+				<li><p><a name="3292">3.2.9.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>See user login</p></li>
+						<li><p>The system shall redirect on login to Administrator pages</p></li>
+					</ul>
+				<li><p><a name="3293">3.2.9.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>Administrators may only login if they exist.</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="32A">3.2.A Administrator Modify Existing Course</a></h4></li>
+			<ul>
+				<li><p><a name="32A0">3.2.A.0 Priority</a></p></li>
+					<ul>
+						<li><p>MEDIUM</p></li>
+					</ul>
+				<li><p><a name="32A1">3.2.A.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>Modifies a course in the database</p></li>
+					</ul>
+				<li><p><a name="32A2">3.2.A.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The system shall lock the course in the database and the course cannot be registered for while the course is being modified</p></li>
+						<li><p>If the course is modified while a student is in the process of registering the student receives an error and the students courses do not change.</p></li>
+					</ul>
+				<li><p><a name="32A3">3.2.A.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>Only available on courses currently in the database and not during the registration process</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="32B">3.2.B Administrator Add New Course</a></h4></li>
+			<ul>
+				<li><p><a name="32B0">3.2.B.0 Priority</a></p></li>
+					<ul>
+						<li><p>HIGH</p></li>
+					</ul>
+				<li><p><a name="32B1">3.2.B.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>Adds a course in the database</p></li>
+					</ul>
+				<li><p><a name="32B2">3.2.B.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The system shall prevent the addition of two of the same class with the same CRN or course code</p></li>
+						<li><p>If the same course or the same CRN is added the administrator is informed with an error message and no changes occur with the database.</p></li>
+					</ul>
+				<li><p><a name="32B3">3.2.B.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>Can only add new classes that are not currently represented in the database</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="32C">3.2.C Administrator Create User (student)</a></h4></li>
+			<ul>
+				<li><p><a name="32C0">3.2.C.0 Priority</a></p></li>
+					<ul>
+						<li><p>HIGH</p></li>
+					</ul>
+				<li><p><a name="32C1">3.2.C.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>Allows administrators to create users</p></li>
+					</ul>
+				<li><p><a name="32C2">3.2.C.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The administrator attempts to add a new student</p></li>
+						<li><p>No two users may have the same ID. If an administrator attempts to add a user with the same ID an error is displayed with no change to the database</p></li>
+					</ul>
+				<li><p><a name="32C3">3.2.C.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>Administrators may only add new users</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="32D">3.2.D Administrator Create Administrator</a></h4></li>
+			<ul>
+				<li><p><a name="32D0">3.2.F.0 Priority</a></p></li>
+					<ul>
+						<li><p>MEDIUM</p></li>
+					</ul>
+				<li><p><a name="32D1">3.2.D.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>Allows administrators to create other administrators</p></li>
+					</ul>
+				<li><p><a name="32D2">3.2.D.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The administrator attempts to add a new administrator</p></li>
+						<li><p>If two administrators exist cause error with no changes to the database</p></li>
+						<li><p>No two administrators may have the same ID. If an administrator attempts to add a user with the same ID an error is displayed with no change to the database</p></li>
+					</ul>
+				<li><p><a name="32D3">3.2.D.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>Administrators may only add new administrators and cannot promote users</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="32E">3.2.E Administrator Remove User (student)</a></h4></li>
+			<ul>
+				<li><p><a name="32E0">3.2.E.0 Priority</a></p></li>
+					<ul>
+						<li><p>MEDIUM</p></li>
+					</ul>
+				<li><p><a name="32E1">3.2.E.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p>Allows administrators to remove users</p></li>
+					</ul>
+				<li><p><a name="32E2">3.2.E.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The administrator attempts to remove an user</p></li>
+						<li><p>Administrators shall not remove a user that does not exist</p></li>
+						<li><p>If an administrator attempts to remove a user that does not exist an error is displayed and no change is made to the database</p></li>
+					</ul>
+				<li><p><a name="32E3">3.2.E.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>Users may not remove other users</p></li>
+					</ul>
+			</ul>
+			
+			<li><h4><a name="32F">3.2.F Administrator Remove Administrator</a></h4></li>
+			<ul>
+				<li><p><a name="32F0">3.2.F.0 Priority</a></p></li>
+					<ul>
+						<li><p>LOW</p></li>
+					</ul>
+				<li><p><a name="32F1">3.2.F.1 Introduction or Purpose</a></p></li>
+					<ul>
+						<li><p> Allows administrators to remove administrators</p></li>
+					</ul>
+				<li><p><a name="32F2">3.2.F.2 Stimulus or Response Sequence</a></p></li>
+					<ul>
+						<li><p>The administrator attempts to remove an administrator</p></li>
+						<li><p>Administrators may not remove themselves</p></li>
+						<li><p>The only administrator may not remove themselves</p></li>
+						<li><p>No two users may have the same ID. If an administrator attempts to add a user with the same ID an error is displayed with no change to the database</p></li>
+					</ul>
+				<li><p><a name="32F3">3.2.F.3 Associated functional requirements</a></p></li>
+					<ul>
+						<li><p>Administrators may only remove other administrators if there is more than one administrator.</p></li>
+					</ul>
+			</ul>
+		
+		<!--end of functional requirements-->
+		</ul>
+	</ul>
+	<!--/3.2-->
+	
+	<!--3.3-->
+	<ul>
+		<li><h4><a name="PerformanceRequirements">3.3 Performance requirements</a></h4></li>
+		<ul>
+				<li><p><a name="331">3.3.1 The system shall accept input from a maximum of 2 program majors at one time during the fall registration process</a></p></li>
+				<li><p><a name="332">3.3.2 The system response time shall be no longer than 1 second under optimal conditions and 5 seconds under heavy load (e.g. Fall course registration)</a></p></li>
+				<li><p><a name="333">3.3.3 The system shall lock a class in the database when added to the schedule viewer until the user logs out or until the session expires.</a></p></li>
+		</ul>
+	</ul>
+	<!--/3.3-->
+	
+	<!--3.4-->
+	<ul>
+		<li><h4><a name="DesignConstraints">3.4 Design constraints</a></h4></li>
+		<ul>
+				<li><p><a name="341">3.4.1 The system shall run on a modern desktop browser (e.g. Chrome 24, FireFox 24, Internet Explorer 10, etc.)</a></p></li>
+		</ul>
+	</ul>
+	<!--/3.4-->
+	
+	<!--3.5-->
+	<ul>
+		<li><h4><a name="SoftwareSystemAttributes">3.5 Software system attributes</a></h4></li>
+		<ul>
+				<li><p><a name="351">3.5.1 Reliability</a></p></li>
+				<ul>
+					<li><p><a name="3511">3.5.1.1 The system shall maintain stability</a></p></li>
+					<li><p><a name="3512">3.5.1.2 The system shall protect all course registration data from unwanted or accidental modification</a></p></li>
+				</ul>
+				<li><p><a name="352">3.5.2 Availability</a></p></li>
+				<ul>
+					<li><p><a name="3521">3.5.2.1 Course registration shall be available during fall term in accordance with the current major registration and restriction schedule. (e.g. Computer Science 3rd year register after 4th year Computer Science students.)</a></p></li>
+				</ul>
+				<li><p><a name="353">3.5.3 Security</a></p></li>
+				<ul>
+					<li><p><a name="3531">3.5.3.1 The user login credentials shall be salted and hashed per industry standard</a></p></li>
+					<li><p><a name="3532">3.5.3.2 An user must not be able to view, change, modify other users information</a></p></li>
+					<li><p><a name="3533">3.5.3.3 An user shall not be able to impersonate an administrator and vice versa</a></p></li>
+				</ul>
+		</ul>
+	</ul>
+	<!--/3.5-->
+	
+	<!--3.6-->
+	<ul>
+		<li><h4><a name="OtherRequirements">3.6 Other requirements</a></h4></li>
+		<ul>
+				<li><p><a name="361">3.6.1 Must improve on the current LORIS course registration process</a></p></li>
+				<li><p><a name="362">3.6.2 Must have easily understood user interface</a></p></li>
+		</ul>
+	</ul>
+	<!--/3.6-->
